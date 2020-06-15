@@ -1,0 +1,37 @@
+<script>
+    function count_ODD(x) {
+        var fib_1 = 0,
+            fib_2 = 1,
+            fib_3 = 0
+        var sum = 0,
+            guard = 0,
+            i = 0;
+        function fib(p) {
+            if (p < 2) {
+                return p
+            }
+            else {
+                return fib_1 + fib_2
+            }
+        }
+        while (true) {
+            fib_3 = fib(i)
+            console.log(fib_3)
+            fib_1 = fib_2
+            fib_2 = fib_3
+            if (fib_3 >= x) {
+                break
+            }
+            if (guard == 3) {
+                guard = 0
+            }
+            else {
+                sum += fib_3
+            }
+            guard++
+            i++
+        }
+        return sum
+    }
+    console.error(">>" + count_ODD(10000))
+</script>

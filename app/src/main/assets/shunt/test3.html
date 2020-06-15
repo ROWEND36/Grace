@@ -1,0 +1,25 @@
+<script>
+var string = "Dealing with failure is easy: \
+Work hard to improve. Success is also easy to handle:\
+You’ve solved the wrong problem.\
+Work hard to improve."
+  vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+
+  function valueOfStr(str) {
+    sum = 0
+    for (var i = 0; i < str.length; i++) {
+      var char = str.charAt(i)
+      if (vowels.indexOf(char) > -1) {
+        sum -= str.charCodeAt(i)
+      }
+      else if(!/A-Z|a-z/.test(char)){
+        continue
+      }
+      else {
+        sum += str.charCodeAt(i)
+      }
+    }
+    return sum
+  }
+  console.log(valueOfStr(string))
+</script>
