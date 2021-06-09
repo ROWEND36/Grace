@@ -1,30 +1,47 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
+	android:id="@+id/frameLayout"
     android:layout_height="fill_parent">
-	<WebView
-		android:id="@+id/webview"
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent">
-
-	</WebView>
+	<ImageView
+		android:id="@+id/consoleToggle"
+		android:layout_height="50dp"
+		android:layout_width="50dp"
+		android:layout_gravity="top|left"
+		android:padding="10dp"
+		android:elevation="9dp"
+		android:alpha="0.5"
+		android:background="@drawable/circle"
+		android:src="@drawable/ic_bug_report_black_24dp"
+		android:onClick="toggleConsole"
+	/>
 	<LinearLayout
 		android:id="@+id/console"
+		android:visibility="gone"
 		android:layout_width="fill_parent"
-		android:layout_height="300dp"
-		android:layout_gravity="center_horizontal|bottom"
-		android:gravity="fill_vertical"
-		android:weightSum="1"
 		android:elevation="10dp"
-		android:orientation="vertical"
-		android:layout_margin="5dp"
-		android:background="@drawable/console"
+		android:layout_height="300dp"
+		android:layout_gravity="bottom"
+		android:gravity="fill_horizontal"
+		android:weightSum="1"
 	>
+	<LinearLayout
+		android:layout_weight="0.6"
+		android:layout_width="320dp"
+		android:layout_margin="5dp"
+		android:layout_height="fill_parent"
+		android:gravity="fill_vertical"
+		android:background="@drawable/console"
+		android:elevation="10dp"
+		android:weightSum="1"
+		android:orientation="vertical">
 	<HorizontalScrollView
 		android:layout_width="fill_parent"
+		android:background="@drawable/top_bar"
+		android:elevation="1dp"
 		android:layout_height="50dp">
 		<LinearLayout
+			android:paddingHorizontal="30dp"
 			android:layout_width="wrap_content"
-			android:background="#2196F3"
 			android:layout_height="50dp"
 			android:gravity="fill_horizontal|center_vertical"
 			android:orientation="horizontal">
@@ -37,15 +54,6 @@
 				android:gravity="center"
 				android:id="@+id/filterAll"
 				android:onClick="switchConsole"
-			/>
-		<TextView
-			android:layout_width="60dp"
-			android:layout_height="fill_parent"
-			android:text="INFO"
-			android:layout_weight="1"
-			android:gravity="center"
-			android:id="@+id/filterInfo"
-			android:onClick="switchConsole"
 			/>
 			<TextView
 				android:layout_width="60dp"
@@ -92,23 +100,36 @@
 				android:onClick="clearLogs"
 				android:gravity="center"
 			/>
+			<TextView
+				android:layout_width="60dp"
+				android:layout_height="fill_parent"
+				android:text="INFO"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:id="@+id/filterInfo"
+				android:onClick="switchConsole"
+			/>
 			
 		</LinearLayout>
 	</HorizontalScrollView>
 		<ListView
+			android:background="#e1f5fe"
 			android:id="@+id/messages"
 			android:layout_height="0dp"
-			android:layout_margin="5dp"
+			android:layout_marginHorizontal="5dp"
 			android:layout_weight="1"
 			android:layout_width="fill_parent"
 
 		>
 		</ListView>
 		<HorizontalScrollView
+			android:background="@drawable/bottom_bar"
+			android:elevation="1dp"
 			android:layout_width="fill_parent"
 			android:layout_height="50dp"
 		>
 			<LinearLayout
+				android:paddingHorizontal="30dp"
 				android:id="@+id/consoleWidget"
 				android:layout_height="fill_parent"
 				android:gravity="center"
@@ -132,25 +153,19 @@
 					android:onClick="clearCache"
 					android:text="Clear Cache"/>
 				<Button
-					android:id="@+id/forceStop"
+					android:id="@+id/buttonForward"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:onClick="crashReload"
-					android:text="Force Stop"/>
-
+					android:onClick="goForward"
+					android:text="Forward"/>
+				<Button
+					android:id="@+id/buttonBack"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:onClick="goBackward"
+					android:text="Back"/>
 			</LinearLayout>
 		</HorizontalScrollView>
 	</LinearLayout>
-	<ImageView
-		android:id="@+id/consoleToggle"
-		android:layout_height="50dp"
-		android:layout_width="50dp"
-		android:layout_gravity="top|left"
-		android:padding="10dp"
-		android:elevation="10dp"
-		android:alpha="0.5"
-		android:background="@drawable/circle"
-		android:src="@drawable/ic_bug_report_black_24dp"
-		android:onClick="toggleConsole"
-	/>
+	</LinearLayout>
 </FrameLayout>

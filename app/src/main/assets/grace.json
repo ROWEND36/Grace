@@ -1,0 +1,8 @@
+{
+    "linting.jshint.jquery":true,
+    "linting.jshint.globals":{
+        "_Define":true,
+        "Env":true,
+        "ace":true
+    }
+}

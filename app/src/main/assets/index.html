@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0" />
+<meta charset='utf-8' />
+<link rel="shortcut icon" href="./favicon.ico">
+<link rel="stylesheet" href="./libs/css/materialize-grace.css">
+<link rel="stylesheet" href="./main.css">
+<link rel='stylesheet' href="./libs/css/coding-fonts.css">
+<!--<oscript type="text/javascript" charset="utf-8">-->
+<!-- var start = new Date().getTime();-->
+<!-- function timeline(tag){-->
+<!-- var now = new Date().getTime();-->
+<!-- if(tag){-->
+<!-- console.log(tag,now-start+"ms");-->
+<!-- }-->
+</head>
+<body class="editor-primary">
+<div class='splash-screen'>
+<span>grace</span>
+</div>
+<!-- start = now;-->
+<!-- }-->
+<!--</script>-->
+<script type="text/javascript" src="./libs/js/eruda.min.js"></script>
+<!--<oscript src="./tests/snippets.js" type="text/javascript" charset="utf-8"></script>-->
+<script>
+//Snippets.detectGlobals.exec(window);
+if (window.eruda) {
+eruda.init(["console"]);
+if(window.Application)
+eruda._entryBtn.hide();
+}
+//timeline('Load Eruda');
+</script>
+<aside id="side-menu" class="clipboard-empty container sidenav">
+<ul id="selector" class="nav-main tabs" data-nav-behaviour="tabs">
+<li class="tab">
+<a href="#hierarchy_tab">
+<i class="material-icons" style="width:100%">work</i>
+</a>
+</li>
+<li id="search_tab" class="tab" style='display:none'>
+<a href="#search_container">
+<i class="material-icons">search</i>
+</a>
+</li>
+<li id="settings_tab" class="tab" style='display:none'>
+<a href="#settings">
+<i class="material-icons">settings</i>
+</a>
+</li>
+</ul>
+<div id="hierarchy_tab">
+<span id="opendocs-toggle" class="header toggleBelow" tabIndex=0>Open Documents<button class="material-icons">keyboard_arrow_up</button></span>
+<ul id="opendocs" class="fileview">
+</ul>
+<span id="find_file-toggle" class="header toggleBelow" tabIndex=0>Find file<button class="material-icons">keyboard_arrow_up</button></span>
+<div class="find_file edge_box-2 h-50">
+<div class="fill_box p-5"><input type="text" name="search_text" id="search_text" value="" /></div>
+<button id="find_file_btn" class="side-1 material-icons">search</button>
+<button id="find_file_cancel_btn" class="side-2 material-icons">refresh</button>
+</div>
+<ul id="hierarchy" class="fileview">
+</ul>
+</div>
+<div id="search_container" class="" style="padding:15px">
+<span>Search</span>
+<div class="edge_box-2 h-50">
+<div class="fill_box input-field pb-10 inline">
+<input id="searchInput" placeholder="Search for" type="text" class="">
+</div>
+<button id="searchBtn" class="side-1 material-icons">search</button>
+<button id='searchConfig' class="side-2 material-icons">view_headline</button>
+</div>
+<div class='replaceBox'>
+<span>Replace</span>
+<div class="edge_box-2 h-50">
+<div class="input-field inline pb-10 fill_box">
+<input id="replaceInput" placeholder="Replace with" type="text" class="">
+</div>
+<button id="undoReplaceBtn" class="side-1"><i class="material-icons">autorenew</i></button>
+<button id="replaceBtn" class="side-2"><i class="material-icons">swap_horiz</i></button>
+</div>
+</div>
+<div class="ace_search_options">
+<button id='toggleReplace' class="left material-icons">keyboard_arrow_down</button>
+<button id="toggleRegex" class="right ace_button">.*</button>
+<button id="caseSensitive" class="right ace_button">Aa</button>
+<button id="toggleWholeWord" class="right ace_button">[ab]</button>
+</div>
+<h6 id="searchInfo"></h6>
+<div id="loading"><span>Searching...</span><span>Searching...</span><br /><button id="searchStop" class='btn red center'>Stop</button></div>
+<div id="searchResults">
+</div>
+<button id="showMoreResults" class="btn blue center">More..</button>
+</div>
+<div id="settings" style="">
+</div>
+</aside>
+<div class="content">
+<div class="nav-main" id="action_bar">
+<button class="sidenav-trigger sidenav-menu-button" data-target="side-menu">
+<i class="material-icons big menu-icon">menu</i>
+</button>
+<ul id="menu" class="singleTab tabs"></ul>
+<button class="dropdown-trigger sidenav-more-button" data-target="overflow-menu">
+<i class="material-icons big menu-icon">more_vert</i>
+</button>
+</div>
+<div id="viewroot">
+</div>
+<button id="toolbar-toggle"><i class="material-icons">keyboard_arrow_down</i></button>
+<button id="runButton" class="btn-floating btn btn-large waves-effect waves-light">
+<i class="material-icons">play_arrow</i>
+</button>
+<div id="status-bar" class="editor-primary">
+<span id="status-filename" class="clipper">Open a file</span>
+</div>
+</div>
+<!--TODO Dynamic-->
+<!--TODO Dynamic-->
+<!--TODO Dynamic-->
+<!--TODO Dynamic-->
+<!--TODO Dynamic or rather move core functionality to files loaded with bootlist.define-->
+<!--todo load this views asynchronously since they are not immediately used!-->
+<!--todo load documents after characterbar is set up?? Nah, it'an editor after all-->
+<!--TODO Dynamic-->
+<script src="./bundle.szR9sgD4f.min.js" type="text/javascript"></script>
+</body>
+</html>

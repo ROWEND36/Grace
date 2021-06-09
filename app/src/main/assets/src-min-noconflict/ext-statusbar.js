@@ -1,0 +1,9 @@
+ace.define("ace/ext/statusbar",[],function(e,t,n){"use strict";var r=e("../lib/dom"),i=e("../lib/lang"),s=function(e,t){this.element=r.createElement("div"),this.element.className="ace_status-indicator",this.element.style.cssText="display: inline-block;",t.appendChild(this.element);var n=(this.statusUpdate=i.delayedCall(function(){this.updateStatus(this.editor)}.bind(this))).schedule.bind(null,100);this.editor=e,this.editor.on("changeStatus",n),this.editor.on("changeSelection",n),this.editor.on("keyboardActivity",n)};(function(){this.setEditor=function(e){this.statusUpdate.cancel(),this.editor.off("changeStatus",this.statusUpdate),this.editor.off("changeSelection",this.statusUpdate),this.editor.off("keyboardActivity",this.statusUpdate);if(e){var t=this.statusUpdate;this.editor=e,e.on("changeStatus",t),e.on("changeSelection",t),e.on("keyboardActivity",t)}},this.updateStatus=function(e){function n(e,n){e&&t.push(e,n||"|")}var t=[];n(e.keyBinding.getStatusText(e)),e.commands.recording&&n("REC");var r=e.selection,i=r.lead;if(!r.isEmpty()){var s=e.getSelectionRange();n("("+(s.end.row-s.start.row)+":"+(s.end.column-s.start.column)+")"," ")}n(i.row+":"+i.column," "),r.rangeCount&&n("["+r.rangeCount+"]"," "),t.pop(),this.element.textContent=t.join("")}}).call(s.prototype),t.StatusBar=s});
+                (function() {
+                    ace.require(["ace/ext/statusbar"], function(m) {
+                        if (typeof module == "object" && typeof exports == "object" && module) {
+                            module.exports = m;
+                        }
+                    });
+                })();
+            

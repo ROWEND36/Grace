@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Shunt</string>
-    <string name="hello_world">Hello world!</string>
-
+    <string name="app_name">Grace Editor</string>
+	<string name="version_name">V000001</string>
+	<dimen  name="dp_200">200dp</dimen>
+	<dimen  name="dp_100">100dp</dimen>
 </resources>

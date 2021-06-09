@@ -1,0 +1,7 @@
+//GRACE_CONFIG
+{
+    "extensions": ["js"],
+    "rootDir": "/sdcard/Ebenezar/area51/grace/",
+    "exclude": [],
+    "folders": []
+}
