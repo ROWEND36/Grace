@@ -14,6 +14,5 @@ PS: Did I mention it has optional vim keybindings?
 
 Most of it is built on Ace Editor, the javascript engine of Amazon's Cloud 9 editor. If you ever think of donating to this project, please send an email to rowendduke36@gmail.com.
 
-And no, you cannot donate socks.
 
 
